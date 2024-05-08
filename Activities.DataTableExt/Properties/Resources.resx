@@ -130,13 +130,43 @@
     <value>Query</value>
   </data>
   <data name="Query_Description" xml:space="preserve">
-    <value />
+    <value>SQL подобный запрос, пример 'Column1 &gt; 30'</value>
   </data>
   <data name="OutTable_ScreenName" xml:space="preserve">
     <value>DataTable</value>
-    <comment>SQL подобный запрос, пример 'Column1 &gt; 30'</comment>
   </data>
   <data name="OutTable_Description" xml:space="preserve">
     <value />
+  </data>
+  <data name="JoinCondition_Description" xml:space="preserve">
+    <value>Условие объединения</value>
+  </data>
+  <data name="JoinCondition_ScreenName" xml:space="preserve">
+    <value>JoinCondition</value>
+    <comment>название столбца, по которому происходит объединение строк из двух таблиц</comment>
+  </data>
+  <data name="JoinType_Description" xml:space="preserve">
+    <value>Тип объединения (Inner, Left, Right, Full)</value>
+  </data>
+  <data name="JoinType_ScreenName" xml:space="preserve">
+    <value>JoinType</value>
+  </data>
+  <data name="ResultTable_Description" xml:space="preserve">
+    <value>Результирующая таблица</value>
+  </data>
+  <data name="ResultTable_ScreenName" xml:space="preserve">
+    <value>ResultTable</value>
+  </data>
+  <data name="Table1_Description" xml:space="preserve">
+    <value>Входная таблица 1</value>
+  </data>
+  <data name="Table1_ScreenName" xml:space="preserve">
+    <value>Table1</value>
+  </data>
+  <data name="Table2_Description" xml:space="preserve">
+    <value>Входная таблица 2</value>
+  </data>
+  <data name="Table2_ScreenName" xml:space="preserve">
+    <value>Table2</value>
   </data>
 </root>

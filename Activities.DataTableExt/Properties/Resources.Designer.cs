@@ -79,6 +79,42 @@ namespace Activities.DataTableExt.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Условие объединения.
+        /// </summary>
+        internal static string JoinCondition_Description {
+            get {
+                return ResourceManager.GetString("JoinCondition_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на JoinCondition.
+        /// </summary>
+        internal static string JoinCondition_ScreenName {
+            get {
+                return ResourceManager.GetString("JoinCondition_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Тип объединения (Inner, Left, Right, Full).
+        /// </summary>
+        internal static string JoinType_Description {
+            get {
+                return ResourceManager.GetString("JoinType_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на JoinType.
+        /// </summary>
+        internal static string JoinType_ScreenName {
+            get {
+                return ResourceManager.GetString("JoinType_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
         internal static string OutTable_Description {
@@ -111,6 +147,60 @@ namespace Activities.DataTableExt.Properties {
         internal static string Query_ScreenName {
             get {
                 return ResourceManager.GetString("Query_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Результирующая таблица.
+        /// </summary>
+        internal static string ResultTable_Description {
+            get {
+                return ResourceManager.GetString("ResultTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на ResultTable.
+        /// </summary>
+        internal static string ResultTable_ScreenName {
+            get {
+                return ResourceManager.GetString("ResultTable_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Входная таблица 1.
+        /// </summary>
+        internal static string Table1_Description {
+            get {
+                return ResourceManager.GetString("Table1_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Table1.
+        /// </summary>
+        internal static string Table1_ScreenName {
+            get {
+                return ResourceManager.GetString("Table1_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Входная таблица 2.
+        /// </summary>
+        internal static string Table2_Description {
+            get {
+                return ResourceManager.GetString("Table2_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Table2.
+        /// </summary>
+        internal static string Table2_ScreenName {
+            get {
+                return ResourceManager.GetString("Table2_ScreenName", resourceCulture);
             }
         }
         
