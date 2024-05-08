@@ -133,7 +133,7 @@ namespace Activities.DataTableExt.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на .
+        ///   Ищет локализованную строку, похожую на SQL подобный запрос, пример &apos;Column1 &gt; 30&apos;.
         /// </summary>
         internal static string Query_Description {
             get {
