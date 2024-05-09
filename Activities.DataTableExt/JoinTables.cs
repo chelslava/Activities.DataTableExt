@@ -1,10 +1,8 @@
 ﻿using Activities.DataTableExt.Properties;
 using BR.Core.Attributes;
-using System;
 using System.Data;
-using System.Linq;
 
-namespace Namespace_DataTableExt
+namespace Activities.DataTableExt
 {
     // Активность для объединения двух таблиц данных
     [LocalizableScreenName("", typeof(Resources))]
@@ -54,6 +52,8 @@ namespace Namespace_DataTableExt
             {
                 throw new ArgumentNullException("JoinType", "Необходимо задать тип объединения (Inner, Left, Right, Full).");
             }
+            // Инициализируем ResultTable перед выполнением операции объединения
+            ResultTable = new DataTable();
 
             // Выполняем операцию объединения таблиц
             ResultTable = JoinTablesInternal();
@@ -134,18 +134,24 @@ namespace Namespace_DataTableExt
             // Копируем значения из первой таблицы
             foreach (DataColumn column in Table1.Columns)
             {
-                newRow[column.ColumnName] = row1[column.ColumnName];
+                if (ResultTable.Columns.Contains(column.ColumnName))
+                {
+                    newRow[column.ColumnName] = row1[column.ColumnName];
+                }
             }
 
-            // Копируем значения из второй таблицы
-            foreach (DataColumn column in Table2.Columns)
+            // Копируем значения из второй таблицы, если row2 не равен null
+            if (row2 != null)
             {
-                // Если столбец с таким именем уже существует в результирующей таблице, пропускаем его
-                if (!ResultTable.Columns.Contains(column.ColumnName))
+                foreach (DataColumn column in Table2.Columns)
                 {
-                    ResultTable.Columns.Add(column.ColumnName, column.DataType);
+                    if (!ResultTable.Columns.Contains(column.ColumnName))
+                    {
+                        ResultTable.Columns.Add(column.ColumnName, column.DataType);
+                    }
+
+                    newRow[column.ColumnName] = row2[column.ColumnName];
                 }
-                newRow[column.ColumnName] = row2[column.ColumnName];
             }
 
             return newRow;

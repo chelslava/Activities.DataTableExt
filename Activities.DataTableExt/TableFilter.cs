@@ -2,7 +2,7 @@ using BR.Core.Attributes;
 using Activities.DataTableExt.Properties;
 using System.Data;
 
-namespace Namespace_DataTableExt
+namespace Activities.DataTableExt
 {
     [LocalizableScreenName(nameof(Resources.TableFilter_ScreenName), typeof(Resources))]
     [BR.Core.Attributes.Path("DataTableExt")]
@@ -11,17 +11,17 @@ namespace Namespace_DataTableExt
         [LocalizableScreenName(nameof(Resources.InputTable_ScreenName), typeof(Resources))]
         [LocalizableDescription(nameof(Resources.InputTable_Description), typeof(Resources))]
         [IsRequired]
-        public System.Data.DataTable InputTable {get; set;} 
-        
+        public DataTable InputTable { get; set; }
+
         [LocalizableScreenName(nameof(Resources.Query_ScreenName), typeof(Resources))]
         [LocalizableDescription(nameof(Resources.Query_Description), typeof(Resources))]
         [IsRequired]
-        public System.String Query {get; set;} 
-        
+        public string Query { get; set; }
+
         [LocalizableScreenName(nameof(Resources.OutTable_ScreenName), typeof(Resources))]
         [LocalizableDescription(nameof(Resources.OutTable_Description), typeof(Resources))]
         [IsOut]
-        public System.Data.DataTable OutTable { get; set; }
+        public DataTable OutTable { get; set; }
 
         public override void Execute(int? optionID)
         {
