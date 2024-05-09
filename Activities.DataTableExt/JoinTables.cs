@@ -52,34 +52,25 @@ namespace Activities.DataTableExt
             {
                 throw new ArgumentNullException("JoinType", "Необходимо задать тип объединения (Inner, Left, Right, Full).");
             }
+
             // Инициализируем ResultTable перед выполнением операции объединения
             ResultTable = new DataTable();
 
             // Выполняем операцию объединения таблиц
-            ResultTable = JoinTablesInternal();
-        }
-
-        // Метод для выбора типа объединения и вызова соответствующего метода
-        private DataTable JoinTablesInternal()
-        {
-            switch (JoinType.ToLower())
+            ResultTable = JoinType.ToLower() switch
             {
-                case "inner":
-                    return InnerJoin();
-                case "left":
-                    return LeftJoin();
-                case "right":
-                    return RightJoin();
-                case "full":
-                    return FullOuterJoin();
-                default:
-                    throw new ArgumentException("Недопустимое значение для типа объединения.");
-            }
+                "inner" => InnerJoin(),
+                "left" => LeftJoin(),
+                "right" => RightJoin(),
+                "full" => FullOuterJoin(),
+                _ => throw new ArgumentException("Недопустимое значение для типа объединения."),
+            };
         }
 
         // Метод для выполнения внутреннего объединения таблиц
         private DataTable InnerJoin()
         {
+            // Выполняем внутреннее объединение таблиц
             var query = from row1 in Table1.AsEnumerable()
                         join row2 in Table2.AsEnumerable() on row1[JoinCondition] equals row2[JoinCondition]
                         select JoinRows(row1, row2);
@@ -90,6 +81,7 @@ namespace Activities.DataTableExt
         // Метод для выполнения левого объединения таблиц
         private DataTable LeftJoin()
         {
+            // Выполняем левое объединение таблиц
             var query = from row1 in Table1.AsEnumerable()
                         join row2 in Table2.AsEnumerable() on row1[JoinCondition] equals row2[JoinCondition] into joined
                         from row2 in joined.DefaultIfEmpty()
@@ -101,6 +93,7 @@ namespace Activities.DataTableExt
         // Метод для выполнения правого объединения таблиц
         private DataTable RightJoin()
         {
+            // Выполняем правое объединение таблиц
             var query = from row2 in Table2.AsEnumerable()
                         join row1 in Table1.AsEnumerable() on row2[JoinCondition] equals row1[JoinCondition] into joined
                         from row1 in joined.DefaultIfEmpty()
@@ -112,11 +105,13 @@ namespace Activities.DataTableExt
         // Метод для выполнения полного внешнего объединения таблиц
         private DataTable FullOuterJoin()
         {
+            // Выполняем полное внешнее объединение таблиц
             var query = from row1 in Table1.AsEnumerable()
                         join row2 in Table2.AsEnumerable() on row1[JoinCondition] equals row2[JoinCondition] into joined
                         from row2 in joined.DefaultIfEmpty()
                         select JoinRows(row1, row2);
 
+            // Добавляем строки из Table2, которые не были найдены при первом объединении
             query = query.Union(from row2 in Table2.AsEnumerable()
                                 join row1 in Table1.AsEnumerable() on row2[JoinCondition] equals row1[JoinCondition] into joined
                                 from row1 in joined.DefaultIfEmpty()
@@ -131,11 +126,16 @@ namespace Activities.DataTableExt
         {
             DataRow newRow = ResultTable.NewRow();
 
-            // Копируем значения из первой таблицы
-            foreach (DataColumn column in Table1.Columns)
+            // Копируем значения из первой таблицы, если row1 не равен null
+            if (row1 != null)
             {
-                if (ResultTable.Columns.Contains(column.ColumnName))
+                foreach (DataColumn column in Table1.Columns)
                 {
+                    if (!ResultTable.Columns.Contains(column.ColumnName))
+                    {
+                        ResultTable.Columns.Add(column.ColumnName, column.DataType);
+                    }
+
                     newRow[column.ColumnName] = row1[column.ColumnName];
                 }
             }
@@ -156,5 +156,6 @@ namespace Activities.DataTableExt
 
             return newRow;
         }
+
     }
 }
