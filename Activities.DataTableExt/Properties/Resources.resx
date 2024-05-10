@@ -175,6 +175,12 @@
   <data name="AffectedRowsCount_ScreenName" xml:space="preserve">
     <value>AffectedRowsCount</value>
   </data>
+  <data name="AnyMatch_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="AnyMatch_ScreenName" xml:space="preserve">
+    <value>Поиск успешен</value>
+  </data>
   <data name="Criteria_Description" xml:space="preserve">
     <value />
   </data>

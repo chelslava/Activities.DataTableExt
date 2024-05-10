@@ -81,6 +81,24 @@ namespace Activities.DataTableExt.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
+        internal static string AnyMatch_Description {
+            get {
+                return ResourceManager.GetString("AnyMatch_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поиск успешен.
+        /// </summary>
+        internal static string AnyMatch_ScreenName {
+            get {
+                return ResourceManager.GetString("AnyMatch_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
         internal static string Criteria_Description {
             get {
                 return ResourceManager.GetString("Criteria_Description", resourceCulture);

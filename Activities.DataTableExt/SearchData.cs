@@ -1,10 +1,11 @@
-﻿using Activities.DataTableExt.Properties;
-using BR.Core.Attributes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using BR.Core.Attributes;
+using Activities.DataTableExt.Properties;
 
 namespace Activities.DataTableExt
 {
@@ -43,6 +44,12 @@ namespace Activities.DataTableExt
         [IsOut]
         public List<(int RowIndex, int ColumnIndex, object Value)> SearchResults { get; set; }
 
+        // Было ли найдено хотя бы одно соответствие
+        [LocalizableScreenName(nameof(Resources.AnyMatch_ScreenName), typeof(Resources))]
+        [LocalizableDescription(nameof(Resources.AnyMatch_Description), typeof(Resources))]
+        [IsOut]
+        public bool AnyMatch { get; set; }
+
         // Метод выполнения активности
         public override void Execute(int? optionID)
         {
@@ -58,7 +65,7 @@ namespace Activities.DataTableExt
                 if (SearchFirst)
                 {
                     var result = SearchFirstMatch(rows);
-                    if (result != (0, 0, null))
+                    if (result != (0, 0, null)) 
                     {
                         SearchResults.Add(result);
                         AnyMatch = true;
@@ -84,6 +91,7 @@ namespace Activities.DataTableExt
             }
             catch (Exception ex)
             {
+                // Логирование ошибки или выброс исключения
                 Console.WriteLine($"Ошибка выполнения поиска: {ex.Message}");
             }
         }
@@ -96,16 +104,20 @@ namespace Activities.DataTableExt
                 var columnIndex = row.Table.Columns
                     .Cast<DataColumn>()
                     .Select((col, index) => (col, index))
-                    .Where(pair => IsMatch(row[pair.index]))
-                    .Select(pair => pair.index)
-                    .FirstOrDefault();
+                    .FirstOrDefault(pair => IsMatch(row[pair.index])) != default ?
+                        row.Table.Columns
+                            .Cast<DataColumn>()
+                            .Select((col, index) => (col, index))
+                            .FirstOrDefault(pair => IsMatch(row[pair.index])).index :
+                        -1;
 
                 if (columnIndex != -1)
                 {
                     return (row.Table.Rows.IndexOf(row), columnIndex, row[columnIndex]);
                 }
             }
-            return (0, 0, null);
+            // Если совпадение не найдено, возвращаем кортеж с пустыми значениями
+            return (-1, -1, null);
         }
 
         // Поиск всех совпадений
