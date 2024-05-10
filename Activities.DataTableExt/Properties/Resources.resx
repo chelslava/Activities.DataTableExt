@@ -169,4 +169,52 @@
   <data name="Table2_ScreenName" xml:space="preserve">
     <value>Table2</value>
   </data>
+  <data name="AffectedRowsCount_Description" xml:space="preserve">
+    <value>Количество затронутых строк</value>
+  </data>
+  <data name="AffectedRowsCount_ScreenName" xml:space="preserve">
+    <value>AffectedRowsCount</value>
+  </data>
+  <data name="Criteria_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Criteria_ScreenName" xml:space="preserve">
+    <value>Критерии поиска</value>
+  </data>
+  <data name="SearchFirst_Description" xml:space="preserve">
+    <value>Искать до первого совпадения</value>
+  </data>
+  <data name="SearchFirst_ScreenName" xml:space="preserve">
+    <value>До первого</value>
+  </data>
+  <data name="SearchResults_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SearchResults_ScreenName" xml:space="preserve">
+    <value>Результат</value>
+  </data>
+  <data name="SourceTable_Description" xml:space="preserve">
+    <value>Входная таблица</value>
+  </data>
+  <data name="SourceTable_ScreenName" xml:space="preserve">
+    <value>DataTable</value>
+  </data>
+  <data name="SqlQuery_Description" xml:space="preserve">
+    <value>SQL-подобный запрос</value>
+  </data>
+  <data name="SqlQuery_ScreenName" xml:space="preserve">
+    <value>SqlQuery</value>
+  </data>
+  <data name="TableSearch_ScreenName" xml:space="preserve">
+    <value>Поиск данных</value>
+  </data>
+  <data name="TableSqlQuery_ScreenName" xml:space="preserve">
+    <value>Выполнить произвольный SQL-подобный запрос над таблицей</value>
+  </data>
+  <data name="UseRegex_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="UseRegex_ScreenName" xml:space="preserve">
+    <value>Используем Regex</value>
+  </data>
 </root>

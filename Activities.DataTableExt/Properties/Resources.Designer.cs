@@ -61,6 +61,42 @@ namespace Activities.DataTableExt.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Количество затронутых строк.
+        /// </summary>
+        internal static string AffectedRowsCount_Description {
+            get {
+                return ResourceManager.GetString("AffectedRowsCount_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на AffectedRowsCount.
+        /// </summary>
+        internal static string AffectedRowsCount_ScreenName {
+            get {
+                return ResourceManager.GetString("AffectedRowsCount_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string Criteria_Description {
+            get {
+                return ResourceManager.GetString("Criteria_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Критерии поиска.
+        /// </summary>
+        internal static string Criteria_ScreenName {
+            get {
+                return ResourceManager.GetString("Criteria_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
         internal static string InputTable_Description {
@@ -169,6 +205,78 @@ namespace Activities.DataTableExt.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Искать до первого совпадения.
+        /// </summary>
+        internal static string SearchFirst_Description {
+            get {
+                return ResourceManager.GetString("SearchFirst_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на До первого.
+        /// </summary>
+        internal static string SearchFirst_ScreenName {
+            get {
+                return ResourceManager.GetString("SearchFirst_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string SearchResults_Description {
+            get {
+                return ResourceManager.GetString("SearchResults_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Результат.
+        /// </summary>
+        internal static string SearchResults_ScreenName {
+            get {
+                return ResourceManager.GetString("SearchResults_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Входная таблица.
+        /// </summary>
+        internal static string SourceTable_Description {
+            get {
+                return ResourceManager.GetString("SourceTable_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на DataTable.
+        /// </summary>
+        internal static string SourceTable_ScreenName {
+            get {
+                return ResourceManager.GetString("SourceTable_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на SQL-подобный запрос.
+        /// </summary>
+        internal static string SqlQuery_Description {
+            get {
+                return ResourceManager.GetString("SqlQuery_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на SqlQuery.
+        /// </summary>
+        internal static string SqlQuery_ScreenName {
+            get {
+                return ResourceManager.GetString("SqlQuery_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Входная таблица 1.
         /// </summary>
         internal static string Table1_Description {
@@ -210,6 +318,42 @@ namespace Activities.DataTableExt.Properties {
         internal static string TableFilter_ScreenName {
             get {
                 return ResourceManager.GetString("TableFilter_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поиск данных.
+        /// </summary>
+        internal static string TableSearch_ScreenName {
+            get {
+                return ResourceManager.GetString("TableSearch_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Выполнить произвольный SQL-подобный запрос над таблицей.
+        /// </summary>
+        internal static string TableSqlQuery_ScreenName {
+            get {
+                return ResourceManager.GetString("TableSqlQuery_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string UseRegex_Description {
+            get {
+                return ResourceManager.GetString("UseRegex_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Используем Regex.
+        /// </summary>
+        internal static string UseRegex_ScreenName {
+            get {
+                return ResourceManager.GetString("UseRegex_ScreenName", resourceCulture);
             }
         }
     }
