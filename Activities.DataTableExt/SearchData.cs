@@ -61,6 +61,11 @@ namespace Activities.DataTableExt
                     if (result != (0, 0, null))
                     {
                         SearchResults.Add(result);
+                        AnyMatch = true;
+                    }
+                    else
+                    {
+                        AnyMatch = false;
                     }
                 }
                 else
@@ -69,6 +74,11 @@ namespace Activities.DataTableExt
                     if (results.Any())
                     {
                         SearchResults.AddRange(results);
+                        AnyMatch = true;
+                    }
+                    else
+                    {
+                        AnyMatch = false;
                     }
                 }
             }
@@ -83,10 +93,11 @@ namespace Activities.DataTableExt
         {
             foreach (var row in rows)
             {
-                var columnIndex = row.ItemArray
-                    .Select((value, index) => (value, index))
-                    .Where(tuple => IsMatch(tuple.value))
-                    .Select(tuple => tuple.index)
+                var columnIndex = row.Table.Columns
+                    .Cast<DataColumn>()
+                    .Select((col, index) => (col, index))
+                    .Where(pair => IsMatch(row[pair.index]))
+                    .Select(pair => pair.index)
                     .FirstOrDefault();
 
                 if (columnIndex != -1)
@@ -103,14 +114,15 @@ namespace Activities.DataTableExt
             var results = new List<(int, int, object)>();
             foreach (var row in rows)
             {
-                var matchedColumns = row.ItemArray
-                    .Select((value, index) => (value, index))
-                    .Where(tuple => IsMatch(tuple.value))
+                var matchedColumns = row.Table.Columns
+                    .Cast<DataColumn>()
+                    .Select((col, index) => (col, index))
+                    .Where(pair => IsMatch(row[pair.index]))
                     .ToList();
 
                 foreach (var match in matchedColumns)
                 {
-                    results.Add((row.Table.Rows.IndexOf(row), match.index, match.value));
+                    results.Add((row.Table.Rows.IndexOf(row), match.index, row[match.index]));
                 }
             }
             return results;
