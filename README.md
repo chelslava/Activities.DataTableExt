@@ -88,29 +88,29 @@
 ### Примеры запросов:
 
 1.	**Поиск всех строк, содержащих слово "apple" в любой колонке:**
-   *	Criteria = "apple"*
-  	*	Пример входных данных: Criteria = "apple", SourceTable = { { "apple pie", 25 }, { "banana", 30 }, { "green apple", 15 } }*
-  	*	Результаты: SearchResults = { (0, 0, "apple pie"), (2, 0, "green apple") }, AnyMatch = true*
+   *	Criteria = "apple"
+   *	Пример входных данных: Criteria = "apple", SourceTable = { { "apple pie", 25 }, { "banana", 30 }, { "green apple", 15 } }
+   *	Результаты: SearchResults = { (0, 0, "apple pie"), (2, 0, "green apple") }, AnyMatch = true
   	
 3.	**Поиск строк, где значение в колонке "Price" больше 100:**
-   o	Criteria = "Price > 100", ColumnsToSearch = { "Price" }
-  	o	Пример входных данных: Criteria = "Price > 100", ColumnsToSearch = { "Price" }, SourceTable = { { 120 }, { 90 }, { 150 } }
-  	o	Результаты: SearchResults = { (0, 0, 120), (2, 0, 150) }, AnyMatch = true
+   * Criteria = "Price > 100", ColumnsToSearch = { "Price" }
+   * Пример входных данных: Criteria = "Price > 100", ColumnsToSearch = { "Price" }, SourceTable = { { 120 }, { 90 }, { 150 } }
+   * Результаты: SearchResults = { (0, 0, 120), (2, 0, 150) }, AnyMatch = true
   	
 4.	**Поиск строк, где значение в колонке "Date" после 2023-01-01:**
-   o	Criteria = "Date > #2023-01-01#"
-  	o	Пример входных данных: Criteria = "Date > #2023-01-01#", SourceTable = { { "2023-02-15" }, { "2022-12-30" }, { "2023-05-20" } }
-  	o	Результаты: SearchResults = { (0, 0, "2023-02-15"), (2, 0, "2023-05-20") }, AnyMatch = true
+   * Criteria = "Date > #2023-01-01#"
+   * Пример входных данных: Criteria = "Date > #2023-01-01#", SourceTable = { { "2023-02-15" }, { "2022-12-30" }, { "2023-05-20" } }
+   * Результаты: SearchResults = { (0, 0, "2023-02-15"), (2, 0, "2023-05-20") }, AnyMatch = true
   	
 ### Примеры с регулярными выражениями:
 
 4.	**Поиск строк, где значение в колонке "Name" начинается с буквы 'A' или 'B':**
-   o	Criteria = "Name LIKE 'A%' OR Name LIKE 'B%'"
-  	o	Пример входных данных: Criteria = "Name LIKE 'A%' OR Name LIKE 'B%'", SourceTable = { { "Alice", 25 }, { "Bob", 30 }, { "Charlie", 40 } }
-  	o	Результаты: SearchResults = { (0, 0, "Alice"), (1, 0, "Bob") }, AnyMatch = true
+   * Criteria = "Name LIKE 'A%' OR Name LIKE 'B%'"
+   * Пример входных данных: Criteria = "Name LIKE 'A%' OR Name LIKE 'B%'", SourceTable = { { "Alice", 25 }, { "Bob", 30 }, { "Charlie", 40 } }
+   * Результаты: SearchResults = { (0, 0, "Alice"), (1, 0, "Bob") }, AnyMatch = true
   	
 5.	**Поиск строк, где значение в колонке "Email" соответствует шаблону адреса электронной почты:**
-   o	Criteria = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
-  	o	Пример входных данных: Criteria = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", SourceTable = { { "test@example.com" }, { "invalid email", 30 }, { "another@test.com" } }
-  	o	Результаты: SearchResults = { (0, 0, "test@example.com"), (2, 0, "another@test.com") }, AnyMatch = true
+   * Criteria = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b"
+   * Пример входных данных: Criteria = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", SourceTable = { { "test@example.com" }, { "invalid email", 30 }, { "another@test.com" } }
+   * Результаты: SearchResults = { (0, 0, "test@example.com"), (2, 0, "another@test.com") }, AnyMatch = true
 
