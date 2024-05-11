@@ -92,12 +92,12 @@
    *	Пример входных данных: Criteria = "apple", SourceTable = { { "apple pie", 25 }, { "banana", 30 }, { "green apple", 15 } }
    *	Результаты: SearchResults = { (0, 0, "apple pie"), (2, 0, "green apple") }, AnyMatch = true
   	
-3.	**Поиск строк, где значение в колонке "Price" больше 100:**
+2.	**Поиск строк, где значение в колонке "Price" больше 100:**
    * Criteria = "Price > 100", ColumnsToSearch = { "Price" }
    * Пример входных данных: Criteria = "Price > 100", ColumnsToSearch = { "Price" }, SourceTable = { { 120 }, { 90 }, { 150 } }
    * Результаты: SearchResults = { (0, 0, 120), (2, 0, 150) }, AnyMatch = true
   	
-4.	**Поиск строк, где значение в колонке "Date" после 2023-01-01:**
+3.	**Поиск строк, где значение в колонке "Date" после 2023-01-01:**
    * Criteria = "Date > #2023-01-01#"
    * Пример входных данных: Criteria = "Date > #2023-01-01#", SourceTable = { { "2023-02-15" }, { "2022-12-30" }, { "2023-05-20" } }
    * Результаты: SearchResults = { (0, 0, "2023-02-15"), (2, 0, "2023-05-20") }, AnyMatch = true
