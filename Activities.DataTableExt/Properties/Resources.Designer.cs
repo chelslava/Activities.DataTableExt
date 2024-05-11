@@ -99,6 +99,24 @@ namespace Activities.DataTableExt.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на .
         /// </summary>
+        internal static string ColumnsToSearch_Description {
+            get {
+                return ResourceManager.GetString("ColumnsToSearch_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Поиск в колонке.
+        /// </summary>
+        internal static string ColumnsToSearch_ScreenName {
+            get {
+                return ResourceManager.GetString("ColumnsToSearch_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
         internal static string Criteria_Description {
             get {
                 return ResourceManager.GetString("Criteria_Description", resourceCulture);
@@ -111,6 +129,24 @@ namespace Activities.DataTableExt.Properties {
         internal static string Criteria_ScreenName {
             get {
                 return ResourceManager.GetString("Criteria_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string IgnoreCase_Description {
+            get {
+                return ResourceManager.GetString("IgnoreCase_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на IgnoreCase.
+        /// </summary>
+        internal static string IgnoreCase_ScreenName {
+            get {
+                return ResourceManager.GetString("IgnoreCase_ScreenName", resourceCulture);
             }
         }
         
@@ -165,6 +201,24 @@ namespace Activities.DataTableExt.Properties {
         internal static string JoinType_ScreenName {
             get {
                 return ResourceManager.GetString("JoinType_ScreenName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на .
+        /// </summary>
+        internal static string Multiline_Description {
+            get {
+                return ResourceManager.GetString("Multiline_Description", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Multiline.
+        /// </summary>
+        internal static string Multiline_ScreenName {
+            get {
+                return ResourceManager.GetString("Multiline_ScreenName", resourceCulture);
             }
         }
         

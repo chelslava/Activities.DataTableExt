@@ -181,11 +181,29 @@
   <data name="AnyMatch_ScreenName" xml:space="preserve">
     <value>Поиск успешен</value>
   </data>
+  <data name="ColumnsToSearch_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="ColumnsToSearch_ScreenName" xml:space="preserve">
+    <value>Поиск в колонке</value>
+  </data>
   <data name="Criteria_Description" xml:space="preserve">
     <value />
   </data>
   <data name="Criteria_ScreenName" xml:space="preserve">
     <value>Критерии поиска</value>
+  </data>
+  <data name="IgnoreCase_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="IgnoreCase_ScreenName" xml:space="preserve">
+    <value>IgnoreCase</value>
+  </data>
+  <data name="Multiline_Description" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Multiline_ScreenName" xml:space="preserve">
+    <value>Multiline</value>
   </data>
   <data name="SearchFirst_Description" xml:space="preserve">
     <value>Искать до первого совпадения</value>
