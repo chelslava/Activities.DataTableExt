@@ -88,9 +88,9 @@
 ### Примеры запросов:
 
 1.	**Поиск всех строк, содержащих слово "apple" в любой колонке:**
-   *	Criteria = "apple"
-  	*	Пример входных данных: Criteria = "apple", SourceTable = { { "apple pie", 25 }, { "banana", 30 }, { "green apple", 15 } }
-  	*	Результаты: SearchResults = { (0, 0, "apple pie"), (2, 0, "green apple") }, AnyMatch = true
+   *	Criteria = "apple"*
+  	*	Пример входных данных: Criteria = "apple", SourceTable = { { "apple pie", 25 }, { "banana", 30 }, { "green apple", 15 } }*
+  	*	Результаты: SearchResults = { (0, 0, "apple pie"), (2, 0, "green apple") }, AnyMatch = true*
   	
 3.	**Поиск строк, где значение в колонке "Price" больше 100:**
    o	Criteria = "Price > 100", ColumnsToSearch = { "Price" }
